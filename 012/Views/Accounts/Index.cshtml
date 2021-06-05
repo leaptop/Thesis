@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Accounts>
+    <!--Accounts has to be green, but for some reason it's blue...    -->
+    <div class="container p-3">
+        <!-- getbootstrap.com-->
+        <div class="row pt-4">
+            <!-- created a row-->
+            <div class="col-6">
+                <!--created a column-->
+                <h2 class="text-primary">Accounts List</h2>
+            </div>
+            <div class="col-6 text-right">
+                <a asp-controller="Accounts" asp-action="Create" class="btn btn-primary">Create a new Account</a>
+            </div>
+        </div>
+        <br />
+
+        @if(Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        ACCOUNT NAME
+                    </th>
+                    <th>
+                        ACCOUNT BALANCE
+                    </th>
+                    <th>
+                        ACCOUNT UNIQUEID
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                <tr>
+                    <td width="30%">@item.Name</td>
+                    <td width="30%">@item.Balance</td>
+                    <td width="30%">@item.UniqueId</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Accounts created yet</p>
+    }
+
+    </div>
+
+
+
+
+
+
+

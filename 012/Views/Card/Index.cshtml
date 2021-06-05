@@ -1,0 +1,67 @@
+﻿@model IEnumerable<_012.Models.Card>
+    <!--p-3 - padding - distance from the contents of the container
+                                   to its border. Margin - distance between the borders of
+                                   two containers.-->
+    <div class="container p-3">
+        <!-- getbootstrap.com-->
+        <div class="row pt-4">
+            <!-- created a row-->
+            <div class="col-2">
+                <!--created a column-->
+                <h2 class="text-primary">Cards List</h2>
+            </div>
+            <div class="col-6 text-right">
+                <a asp-controller="Card" asp-action="Create" class="btn btn-primary">Create a new Card</a>
+            </div>
+        </div>
+        <br />
+
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-bordered table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Card Id
+                        </th>
+                        <th>
+                            Card Number
+                        </th>
+                        <th>
+                            Card Account
+                        </th>
+                        <th>
+                            Card Balance
+                        </th>
+                        <th>
+                            Card Holder Id
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td width="20%">@item.Id</td>
+                            <td width="20%">@item.CardNumber</td>
+                            <td width="20%">@item.CardAccount</td>
+                            <td width="20%">@item.CardBalance</td>
+                            <td width="20%">@item.CardHolderId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No Accounts created yet</p>
+        }
+
+    </div>
+
+
+
+
+
+
+
