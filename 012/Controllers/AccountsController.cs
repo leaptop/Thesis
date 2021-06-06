@@ -33,9 +33,13 @@ namespace _012.Controllers
         [ValidateAntiForgeryToken]//Checks if we still have a token, if we are still logged in
         public IActionResult Create(Accounts obj)
         {
-            _db.AccountsT.Add(obj);//obviously adding the newly created writing to our db
-            _db.SaveChanges();//obviously saving changes to our db
-            return RedirectToAction("Index");//obviously just call another action
+            if (ModelState.IsValid)//makes sure, that the [Required] inserted values are not NULL, etc
+            {
+                _db.AccountsT.Add(obj);//obviously adding the newly created writing to our db
+                _db.SaveChanges();//obviously saving changes to our db
+                return RedirectToAction("Index");//obviously just call another action
+            }
+            else return View();
         }
     }
 }

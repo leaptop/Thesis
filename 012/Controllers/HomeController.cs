@@ -12,6 +12,11 @@ namespace _012.Controllers
 {
     public class HomeController : Controller
     {
+     /*   public static string GetUserId(this ClaimsPrincipal principal)
+        {
+            return principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        }*/
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
