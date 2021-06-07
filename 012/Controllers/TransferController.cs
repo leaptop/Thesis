@@ -10,6 +10,12 @@ namespace _012.Controllers
     public class TransferController : Controller
     {
         // GET: TransferController
+        public ActionResult ShowUs()
+        {
+            return View();
+        }
+        
+        // GET: TransferController
         public ActionResult Index()
         {
             return View();

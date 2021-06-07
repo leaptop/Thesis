@@ -1,63 +1,111 @@
 ﻿@model IEnumerable<_012.Models.Card>
-    <!--p-3 - padding - distance from the contents of the container
-                                   to its border. Margin - distance between the borders of
-                                   two containers.-->
-    <div class="container p-3">
-        <!-- getbootstrap.com-->
-        <div class="row pt-4">
-            <!-- created a row-->
-            <div class="col-2">
-                <!--created a column-->
-                <h2 class="text-primary">Cards List</h2>
-            </div>
-            <div class="col-6 text-right">
-                <a asp-controller="Card" asp-action="Create" class="btn btn-primary">Create a new Card</a>
-            </div>
-        </div>
-        <br />
+<!--p-3 - padding - distance from the contents of the container
+                               to its border. Margin - distance between the borders of
+                               two containers.-->
 
-        @if (Model.Count() > 0)
-        {
-            <table class="table table-bordered table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>
-                            Card Id
-                        </th>
-                        <th>
-                            Card Number
-                        </th>
-                        <th>
-                            Card Account
-                        </th>
-                        <th>
-                            Card Balance
-                        </th>
-                        <th>
-                            Card Holder Id
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+<div class="container p-3">
+    <!-- getbootstrap.com-->
+    <div class="row pt-4">
+        <!-- created a row-->
+        <div class="col-2">
+            <!--created a column-->
+            <h2 class="text-primary">Cards List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Card" asp-action="Create" class="btn btn-primary">Create a new Card</a>
+        </div>
+    </div>
+    <br />
+
+    @if (Model.Count() > 0 && SignInManager.IsSignedIn(User))
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Card Number
+                    </th>
+                    <th>
+                        Card Balance
+                    </th>
+                    <th>
+                        FullName
+                    </th>
+                    <th>
+                        Card Holder Id
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var user = await UserManager.GetUserAsync(User);
+                }
+                @foreach (var item in Model)
+                {
+                    if (item.CardHolderId == user.Id)
                     {
                         <tr>
-                            <td width="20%">@item.Id</td>
                             <td width="20%">@item.CardNumber</td>
-                            <td width="20%">@item.CardAccount</td>
                             <td width="20%">@item.CardBalance</td>
+                            <td width="20%">@item.CardAccount</td>
                             <td width="20%">@item.CardHolderId</td>
+                            <td width="20%">@item.</td>
                         </tr>
                     }
-                </tbody>
-            </table>
+
+                }
+            </tbody>
+        </table>
+
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <form asp-area="" asp-controller="Account" asp-action="Logout"
+                  method="post" id="logoutForm" class="navbar-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage"
+                           data-toggle="dropdown"><i class="fa fa-user-o"></i>&nbsp;@(user.Id ?? user.Id)</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="submit" class="btn btn-link nav-link">
+                            <i class="fa fa-sign-out">
+                            </i>&nbsp;Log out
+                        </button>
+                    </li>
+                </ul>
+            </form>
         }
         else
         {
-            <p>No Accounts created yet</p>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Account"
+                       asp-action="Login"><i class="fa fa-sign-in"></i>&nbsp;Log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class=" btn btn-primary" asp-area="" asp-controller="Account"
+                       asp-action="Register"><i class="fa fa-user-plus"></i>&nbsp;Register</a>
+                </li>
+            </ul>
         }
 
-    </div>
+
+    }
+    else
+    {
+        <p>No Accounts created yet</p>
+    }
+
+</div>
+
 
 
 
