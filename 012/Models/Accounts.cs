@@ -20,7 +20,7 @@ namespace _012.Models
         public string Name { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18,4)")]//makes the Warning about "No type was specified for the decimal property" disappear
+        [Column(TypeName = "decimal(18,2)")]//makes the Warning about "No type was specified for the decimal property" disappear
         public decimal Balance { get; set; }
 
         [Required]

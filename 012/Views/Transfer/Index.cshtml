@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Transfer";
+}
+
+<h1>Перевод</h1>
+
+<table style="width:50%;">
+    <tr><td>Введите сумму перевода</td>         <td><input id="Text1" type="text" /></td></tr>
+    <tr><td>Введите номер карты отправителя</td> <td><input id="Text2" type="text" /></td><td>&nbsp;</td></tr>
+    <tr><td>Введите номер карты получателя</td> <td><input id="Text3" type="text" /></td><td>&nbsp;</td></tr>
+    <tr><td></td><td><a asp-controller="Transfer" asp-action="Move" class="btn btn-primary">Transfer money</a></td><td>&nbsp;</td></tr>

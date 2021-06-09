@@ -12,19 +12,22 @@ namespace _012.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-      //  [Required]
+        //  [Required]
         [Column(TypeName = "decimal(16)")]
+        [CreditCard]
         public decimal CardNumber { get; set; }
         public string CardAccount { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal CardBalance { get; set; }
-      //  [Required]
+        //[Required]
         public string CardHolderId { get; set; }// = has to be Identity UserId
-       // [Required]
+        //[Required]
         public string CardHolderName { get; set; }
         //[Required]
         public DateTime expiryDate { get; set; }
-       // [Required]
+        //[Required]
         public int cvi { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal changeBalance { get; set; }
     }
 }

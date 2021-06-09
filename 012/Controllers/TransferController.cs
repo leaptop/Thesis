@@ -4,18 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _012.Models;
+//using System.Data.SqlClient;
 
 namespace _012.Controllers
 {
     public class TransferController : Controller
     {
         // GET: TransferController
-        public ActionResult ShowUs()
+        [HttpPost]
+        public IActionResult CheckMoney()
         {
-            return View();
+
+           // SqlCommand select Balance from CardT where CardNumber = 
+            return RedirectToAction("Index");
         }
+
+        // GET: 
         
-        // GET: TransferController
         public ActionResult Index()
         {
             return View();

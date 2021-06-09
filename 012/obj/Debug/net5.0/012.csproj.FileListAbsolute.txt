@@ -467,7 +467,6 @@ C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Card\Create.cshtml.g.cs
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Card\Index.cshtml.g.cs
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Home\Transfer.cshtml.g.cs
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -897,3 +896,4 @@ C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Microsoft.Owin.Security.dll
 C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
 C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
 C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Owin.dll
+C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Transfer\Index.cshtml.g.cs
