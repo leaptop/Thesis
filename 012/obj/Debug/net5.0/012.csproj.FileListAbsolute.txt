@@ -897,3 +897,8 @@ C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
 C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
 C:\Users\stepa\Thesis\012\bin\Debug\net5.0\Owin.dll
 C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\Transfer\Index.cshtml.g.cs
+C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\CardTran\Create.cshtml.g.cs
+C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\CardTran\Delete.cshtml.g.cs
+C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\CardTran\Details.cshtml.g.cs
+C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\CardTran\Edit.cshtml.g.cs
+C:\Users\stepa\Thesis\012\obj\Debug\net5.0\Razor\Views\CardTran\Index.cshtml.g.cs

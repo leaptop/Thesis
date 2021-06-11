@@ -53,6 +53,7 @@ namespace _012.Controllers
             /*SignInManager<IdentityUser> SignInManager;
             UserManager<IdentityUser> UserManager;*/
             var user =  _userManager.GetUserAsync(User);
+            if(user.Result.Equals(null))return RedirectToAction("Index");
             obj.CardHolderId = user.Result.Id.ToString();
             _db.CardT.Add(obj);//obviously adding the newly created writing to our db
             _db.SaveChanges();//obviously saving changes to our db
