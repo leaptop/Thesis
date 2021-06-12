@@ -86,7 +86,9 @@ namespace _012.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CardNumber,CardAccount,CardBalance,CardHolderId,CardHolderName,expiryDate,cvi,changeBalance")] Card card)
+        public async Task<IActionResult> Edit(int id, 
+            [Bind("Id,CardNumber,CardAccount,CardBalance,CardHolderId," +
+            "CardHolderName,expiryDate,cvi,changeBalance")] Card card)
         {
             if (id != card.Id)
             {

@@ -5,12 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _012.Models;
+using _012.Data;
 //using System.Data.SqlClient;
 
 namespace _012.Controllers
 {
     public class TransferController : Controller
     {
+        private readonly ApplicationDbContext _context;
+        public TransferController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         // GET: TransferController
         [HttpPost]
         public IActionResult CheckMoney()
@@ -20,8 +26,7 @@ namespace _012.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: 
-        
+        // GET:         
         public ActionResult Index()
         {
             return View();
@@ -63,16 +68,25 @@ namespace _012.Controllers
         // POST: TransferController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Move(int id, IFormCollection collection)
         {
-            try
+            if (MoneyEnough())
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                catch
+                {
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            else return View();
+           
+        }
+        public bool MoneyEnough()
+        {
+            return true;
         }
 
         // GET: TransferController/Delete/5

@@ -1,4 +1,4 @@
-﻿
+﻿@model _012.Models.Card
 @{
     ViewData["Title"] = "Transfer";
 }
@@ -10,3 +10,52 @@
     <tr><td>Введите номер карты отправителя</td> <td><input id="Text2" type="text" /></td><td>&nbsp;</td></tr>
     <tr><td>Введите номер карты получателя</td> <td><input id="Text3" type="text" /></td><td>&nbsp;</td></tr>
     <tr><td></td><td><a asp-controller="Transfer" asp-action="Move" class="btn btn-primary">Transfer money</a></td><td>&nbsp;</td></tr>
+
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="CardNumber" class="control-label"></label>
+            <input asp-for="CardNumber" class="form-control" />
+            <span asp-validation-for="CardNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CardAccount" class="control-label"></label>
+            <input asp-for="CardAccount" class="form-control" />
+            <span asp-validation-for="CardAccount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CardBalance" class="control-label"></label>
+            <input asp-for="CardBalance" class="form-control" />
+            <span asp-validation-for="CardBalance" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CardHolderId" class="control-label"></label>
+            <input asp-for="CardHolderId" class="form-control" />
+            <span asp-validation-for="CardHolderId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CardHolderName" class="control-label"></label>
+            <input asp-for="CardHolderName" class="form-control" />
+            <span asp-validation-for="CardHolderName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="expiryDate" class="control-label"></label>
+            <input asp-for="expiryDate" class="form-control" />
+            <span asp-validation-for="expiryDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="cvi" class="control-label"></label>
+            <input asp-for="cvi" class="form-control" />
+            <span asp-validation-for="cvi" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="changeBalance" class="control-label"></label>
+            <input asp-for="changeBalance" class="form-control" />
+            <span asp-validation-for="changeBalance" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>

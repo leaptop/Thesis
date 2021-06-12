@@ -39,12 +39,7 @@ namespace _012.Controllers
             //have retrieved contents of the table CardT
             return View(objList);//have passed the contents to our view
         }
-        //GET-create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
+      
         //POST-create
         [HttpPost]
         [ValidateAntiForgeryToken]//Checks if we still have a token, if we are still logged in
@@ -58,6 +53,11 @@ namespace _012.Controllers
             _db.CardT.Add(obj);//obviously adding the newly created writing to our db
             _db.SaveChanges();//obviously saving changes to our db
             return RedirectToAction("Index");//obviously just call another action
+        }
+        //GET-create
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
